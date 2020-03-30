@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <title>MySite</title>
+  <link href="https://fonts.googleapis.com/css?family=Caveat|Dancing+Script|Shadows+Into+Light&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/index.css">
+
+  <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+  <script type="text/javascript">
+    // $(function() {
+    //   $('a').on('click', function() {
+    //     $('h1').fadeOut();
+    //   });
+    // });
+    $(function() {
+      // #で始まるアンカーをクリックした場合に処理
+      $('a[href^="."]').click(function() {
+        // スクロールの速度
+        var speed = 400; // ミリ秒
+        // アンカーの値取得
+        var href = $(this).attr("href");
+        // 移動先を取得
+        var target = $(href == "." || href == "" ? 'html' : href);
+        // 移動先を数値で取得
+        var position = target.offset().top;
+        // スムーススクロール
+        $('body,html').animate({
+          scrollTop: position
+        }, speed, 'swing');
+        return false;
+      });
+    })
+  </script>
+</head>
+
+<body>
+  <div id="wrraper">
+    <header>
+      <div class="heading">
+        <div class="flexbox">
+          <h1 class="header-title">MySite</h1>
+          <div class="hamburger"><span></span></div>
+          <nav>
+            <ul class="flexbox">
+              <li><a href="#">Home</a></li>
+              <li><a href=".portfolio">Portfolio</a></li>
+              <li><a href=".profile">Profile</a></li>
+              <li><a href=".contact">Contact</a></li>
+            </ul>
+          </nav>
+
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <div class="fixed-bg main-img">
+        <h1 class="main-img-text">It’s never too late to learn.</h1>
+        <p class="main-img-text">simply dummy text of the website</p>
+      </div>
+
+      <div class="portfolio">
+        <div class="portfolio-content">
+          <h2>Portfolio</h2>
+          <p>It is a long established fact that a reader will be distracted by the readable <br>
+            content of a page when looking at its layout.<br>
+            The point of using MySite is that it has a more-or-less normal distribution of letters
+          </p>
+
+          <div class="portfolio-flexbox">
+            <img src="img/cup-of-coffee.png" class="portfolio-img">
+            <img src="img/cup-of-coffee.png" class="portfolio-img">
+            <img src="img/cup-of-coffee.png" class="portfolio-img">
+            <img src="img/cup-of-coffee.png" class="portfolio-img">
+            <img src="img/cup-of-coffee.png" class="portfolio-img">
+            <img src="img/cup-of-coffee.png" class="portfolio-img">
+          </div>
+        </div>
+      </div>
+
+      <div class="fixed-bg sub-img">
+        <h1 class="sub-img-text">Life is what you make it.</h1>
+        <p class="sub-img-text">simply dummy text of the website</p>
+      </div>
+
+
+
+
+      <div class="profile">
+        <div class="profile-content">
+
+          <h2>Profile</h2>
+          <p>It is a long established fact that a reader will be distracted by the readable <br>
+            content of a page when looking at its layout.<br>
+            The point of using MySite is that it has a more-or-less normal distribution of letters
+          </p>
+
+          <div class="profile flexbox">
+            <div class="profile-img">
+              <img src="img/no-image.png">
+            </div>
+
+            <div class="profile-text">
+              <h3>MyName</h3>
+              <p>K.H</p>
+
+              <h3>MySkills</h3>
+              <p>HTML/CSS/JavaScript/Ruby</p>
+
+              <h3>MyHobby</h3>
+              <p>Car/Travel/Watching Sports</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="fixed-bg sub-img2">
+        <h1 class="sub-img-text">Travel broadens mind.</h1>
+        <p class="sub-img-text">simply dummy text of the website</p>
+      </div>
+
+      <div class="contact">
+        <div class="contact-content">
+
+          <h2>Contact</h2>
+          <p>It is a long established fact that a reader will be distracted by the readable <br>
+            content of a page when looking at its layout.<br>
+            The point of using MySite is that it has a more-or-less normal distribution of letters
+          </p>
+
+          <div class="contact flexbox">
+            <div class="contacts">
+
+              <h3>Mail</h3>
+              <p>xxx@xxx.com</p>
+              <h3>Tel</h3>
+              <p>000-0000-0000</p>
+
+            </div>
+
+            <div class="contact-text">
+              <h3>SNS</h3>
+
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+
+    </main>
+
+    <footer>
+      <p>&copy;MySite</p>
+    </footer>
+  </div>
+
+</body>
+
+</html>

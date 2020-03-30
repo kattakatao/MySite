@@ -1,0 +1,332 @@
+/* 共通部分 */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  display: flex;
+  flex-flow: column;
+  min-height: 100vh;
+  background-color: #000;
+}
+
+h1, h2, h3 {
+  letter-spacing: 0.05em;
+}
+
+.flexbox {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+.fixed-bg {
+  background-attachment: fixed;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.main-img h1,
+.sub-img h1,
+.sub-img2 h1 {
+  font-size: 64px;
+  font-family: 'Caveat', cursive;
+}
+
+.main-img p,
+.sub-img p,
+.sub-img2 p {
+  font-size: 20px;
+  margin-top: 50px;
+}
+
+.portfolio-content h2,
+.profile-content h2,
+.contact-content h2 {
+  margin-top: 20px;
+  padding-top: 90px;
+  font-size: 32px;
+  display: inline-block;
+  position: relative;
+}
+
+.portfolio-content h2::before,
+.profile-content h2::before,
+.contact-content h2::before {
+  content: '';
+  position: absolute;
+  left: 50%;
+  bottom: -8px;
+  display: inline-block;
+  width: 70px;
+  height: 3px;
+  -moz-transform: translateX(-50%);
+  -webkit-transform: translateX(-50%);
+  -ms-transform: translateX(-50%);
+  transform: translateX(-50%);
+  background-color: #EC715F;
+}
+
+/* ヘッダー */
+header {
+  width: 100%;
+  height: 100px;
+  background-color: #000;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 5;
+  opacity: 0.9;
+}
+
+.header-title {
+  line-height: 100px;
+  font-family: cursive;
+  font-size: 40px;
+  letter-spacing: 0.1em;
+}
+
+.heading {
+  max-width: 1024px;
+  height: 100px;
+  margin: 0 auto;
+  color: #fff;
+  line-height: 70px;
+  position: relative;
+}
+
+nav {
+  margin: 0;
+  position: relative;
+}
+
+nav ul {
+  /* border: 1px solid #ccc; */
+  display: flex;
+  justify-content: space-between;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+nav ul li {
+  /* padding: 5px; */
+  flex: 1;
+}
+
+nav ul li a {
+  /* background: #fff; */
+  /* border-right: 1px solid #ccc; */
+  color: #fff;
+  display: block;
+  padding: 0.6em 0.4em;
+  text-align: center;
+  text-decoration: none;
+}
+
+nav ul li a:hover {
+  /* background: #ccc; */
+  color: #fff;
+  opacity: 0.6;
+}
+
+nav ul li:last-child a {
+  border-right: none;
+}
+
+/* メイン画像 */
+.main-img {
+  width: 100%;
+  height: 650px;
+  background-image: url(../img/cup-of-coffee.png);
+  opacity: 0.8;
+  position: relative;
+  margin-top: 100px;
+  z-index: 0;
+  text-align: center;
+}
+
+.main-img-text,
+.sub-img-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: #fff;
+}
+
+/* sub画像 */
+.sub-img {
+  width: 100%;
+  height: 650px;
+  background-image: url(../img/traveler.png);
+  position: relative;
+  z-index: 0;
+  text-align: center;
+}
+
+.sub-img2 {
+  width: 100%;
+  height: 650px;
+  background-image: url(../img/rake.png);
+  position: relative;
+  z-index: 0;
+  text-align: center;
+}
+
+/* メインコンテンツ(Portfolio) */
+.portfolio {
+  background-color: pink;
+}
+
+.portfolio-content {
+  max-width: 940px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.portfolio-content p {
+  margin: 30px 0;
+  font-size: 16px;
+}
+
+.portfolio-img {
+  width: 300px;
+  height: 250px;
+  background-size: cover;
+  background-repeat: no-repeat;
+  margin: 10px 0px;
+}
+
+/* プロフィール */
+.profile {
+  background-color: #ECEFF1;
+  padding-bottom: 60px;
+}
+
+.profile-content p {
+  margin: 30px 0;
+  font-size: 16px;
+}
+
+.profile-content {
+  max-width: 1024px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.profile-img {
+  margin-right: 30px;
+  max-width: 512px;
+}
+
+.profile-img img {
+  width: 250px;
+  height: 250px;
+  border-radius: 50%;
+}
+
+.profile-text {
+  max-width: 512px;
+}
+
+.profile-text h3 {
+  margin-bottom: 5px;
+  letter-spacing: 0.1em;
+}
+
+.profile-text h3:first-child {
+  margin-top: 30px;
+}
+
+.profile-text h3:nth-child(3) {
+  margin-top: 20px;
+}
+
+.profile-text h3:nth-child(5) {
+  margin-top: 20px;
+}
+
+.profile-text p {
+  margin: 0;
+}
+
+/* コンタクト */
+.contact {
+  background-color: #ECEFF1;
+}
+
+.contact-content {
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.contacts,
+.contact-text {
+  width: 400px;
+}
+
+.contact {
+  padding-bottom: 60px;
+}
+
+.contact-content p {
+  margin: 30px 0;
+  font-size: 16px;
+}
+
+.contacts p {
+  margin: 5px 0;
+}
+
+/* フッター */
+footer {
+  background-color: #000;
+  height: 60px;
+  text-align: center;
+}
+
+footer p {
+  font-size: 16px;
+  color: #fff;
+  line-height: 60px;
+}
+
+/* レスポンシブ対応 */
+@media screen and (max-width:639px) {
+
+  .main-img p,
+  .sub-img p,
+  .sub-img2 p {
+    margin-top: 160px;
+    width: 210px;
+  }
+
+  .sub-img,
+  .sub-img2 {
+    background-position: -500px 0;
+  }
+
+  .profile-img {
+    margin-left: 20px;
+  }
+
+  nav ul {
+    display: none;
+    position: absolute;
+    width: 100%;
+  }
+
+  nav ul li a {
+    border-bottom: 1px solid #ccc;
+    border-right: none;
+  }
+
+  nav ul li:last-child a {
+    border-bottom: none;
+  }
+}
