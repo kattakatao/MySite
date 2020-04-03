@@ -5,21 +5,36 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1.0">
   <title>MySite</title>
-  <link href="https://fonts.googleapis.com/css?family=Caveat|Dancing+Script|Shadows+Into+Light&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Caveat|Dancing+Script|Shadows+Into+Light&display=swapCherry+Swash:700" rel="stylesheet">
   <link rel="stylesheet" href="css/index.css">
+  <link href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" rel="stylesheet">
 
   <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+  <script src="jquery.fadethis.min.js"></script>
+  <!-- ヘッダー レスポンシブ -->
+  <script>
+    $(function() {
+      var header = $('#top-head');
+      $(window).scroll(function() {
+        if ($(window).scrollTop() > 350) {
+          header.addClass('fixed');
+        } else {
+          header.removeClass('fixed');
+        }
+      });
+      $('.nav-toggle').on('click', function() {
+        header.toggleClass('open');
+      });
+    });
+  </script>
+
+  <!-- スムーススクロール -->
   <script type="text/javascript">
-    // $(function() {
-    //   $('a').on('click', function() {
-    //     $('h1').fadeOut();
-    //   });
-    // });
     $(function() {
       // #で始まるアンカーをクリックした場合に処理
       $('a[href^="."]').click(function() {
         // スクロールの速度
-        var speed = 400; // ミリ秒
+        var speed = 800; // ミリ秒
         // アンカーの値取得
         var href = $(this).attr("href");
         // 移動先を取得
@@ -34,26 +49,54 @@
       });
     })
   </script>
+
+  <!-- 画像時差表示 -->
+  <script type="text/javascript">
+    $(document).ready(function() {
+      var EffectTime = 800;
+      var DelayTime = 800;
+      $('.list li').css({
+        opacity: 0
+      });
+      $(window).on('scroll load', function() {
+        var scMiddle = $(this).scrollTop() + $(this).height() / 2;
+        var listPos = $('.list').offset().top;
+        if (listPos < scMiddle) {
+          $('.list li').each(function(index) {
+            $(this).delay(DelayTime * index).animate({
+              'opacity': 1
+            }, EffectTime);
+          });
+        }
+      });
+    });
+  </script>
 </head>
 
 <body>
-  <div id="wrraper">
-    <header>
-      <div class="heading">
-        <div class="flexbox">
-          <h1 class="header-title">MySite</h1>
-          <div class="hamburger"><span></span></div>
-          <nav>
-            <ul class="flexbox">
-              <li><a href="#">Home</a></li>
-              <li><a href=".portfolio">Portfolio</a></li>
-              <li><a href=".profile">Profile</a></li>
-              <li><a href=".contact">Contact</a></li>
-            </ul>
-          </nav>
-
+  <div class="wrraper">
+    <header id="top-head">
+      <div class="inner">
+        <div class="mobile-head">
+          <h1 class="logo">MySite</h1>
+          <div class="nav-toggle">
+            <div>
+              <span></span>
+              <span></span>
+              <span></span>
+            </div>
+          </div>
         </div>
+        <nav class="global-nav">
+          <ul>
+            <li><a href=".wrraper">HOME</a></li>
+            <li><a href=".profile">Profile</a></li>
+            <li><a href=".gallery">Gallery</a></li>
+            <li><a href=".contact">Contact</a></li>
+          </ul>
+        </nav>
       </div>
+
     </header>
 
     <main>
@@ -61,33 +104,6 @@
         <h1 class="main-img-text">It’s never too late to learn.</h1>
         <p class="main-img-text">simply dummy text of the website</p>
       </div>
-
-      <div class="portfolio">
-        <div class="portfolio-content">
-          <h2>Portfolio</h2>
-          <p>It is a long established fact that a reader will be distracted by the readable <br>
-            content of a page when looking at its layout.<br>
-            The point of using MySite is that it has a more-or-less normal distribution of letters
-          </p>
-
-          <div class="portfolio-flexbox">
-            <img src="img/cup-of-coffee.png" class="portfolio-img">
-            <img src="img/cup-of-coffee.png" class="portfolio-img">
-            <img src="img/cup-of-coffee.png" class="portfolio-img">
-            <img src="img/cup-of-coffee.png" class="portfolio-img">
-            <img src="img/cup-of-coffee.png" class="portfolio-img">
-            <img src="img/cup-of-coffee.png" class="portfolio-img">
-          </div>
-        </div>
-      </div>
-
-      <div class="fixed-bg sub-img">
-        <h1 class="sub-img-text">Life is what you make it.</h1>
-        <p class="sub-img-text">simply dummy text of the website</p>
-      </div>
-
-
-
 
       <div class="profile">
         <div class="profile-content">
@@ -117,6 +133,31 @@
         </div>
       </div>
 
+      <div class="fixed-bg sub-img">
+        <h1 class="sub-img-text">Life is what you make it.</h1>
+        <p class="sub-img-text">simply dummy text of the website</p>
+      </div>
+
+      <div class="gallery">
+
+        <div class="gallery-content">
+          <h2>Gallery</h2>
+          <p>It is a long established fact that a reader will be distracted by the readable <br>
+            content of a page when looking at its layout.<br>
+            The point of using MySite is that it has a more-or-less normal distribution of letters
+          </p>
+
+          <ul class="list">
+            <li><img src="img/programming.png" class="gallery-img"></li>
+            <li><img src="img/baseball.png" class="gallery-img"></li>
+            <li><img src="img/soccer.png" class="gallery-img"></li>
+            <li><img src="img/sea.png" class="gallery-img"></li>
+            <li><img src="img/cup-of-coffee.png" class="gallery-img"></li>
+            <li><img src="img/cup-of-coffee.png" class="gallery-img"></li>
+          </ul>
+        </div>
+      </div>
+
       <div class="fixed-bg sub-img2">
         <h1 class="sub-img-text">Travel broadens mind.</h1>
         <p class="sub-img-text">simply dummy text of the website</p>
@@ -143,13 +184,13 @@
 
             <div class="contact-text">
               <h3>SNS</h3>
-
+              <a href="https://www.instagram.com/" target="_blank"><i class="fab fa-instagram fa-3x insta-color"></i></a>
+              <a href="https://twitter.com/" target="_blank"><i class="fab fa-twitter fa-3x twitter-color"></i></a>
+              <a href="https://www.facebook.com/" target="_blank"><i class="fab fa-facebook-square fa-3x facebook-color"></i></a>
             </div>
           </div>
         </div>
       </div>
-
-
 
     </main>
 
