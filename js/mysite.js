@@ -59,7 +59,7 @@ $(function() {
         break;
         // メールアドレス end
 
-        //電話番号(市外局番) start
+        //電話番号 start
       case 'tel':
         if (val == "") {
           $("#msg-" + id).addClass('color');
@@ -75,7 +75,7 @@ $(function() {
           $("#msg-" + id).text("");
         }
         break;
-        //電話番号(市外局番) end
+        //電話番号 end
     }
   });
 
