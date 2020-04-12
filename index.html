@@ -10,6 +10,7 @@
   <link href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" rel="stylesheet">
 
   <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+  <script src="js/mysite.js"></script>
   <script src="jquery.fadethis.min.js"></script>
   <!-- ヘッダー レスポンシブ -->
   <script>
@@ -116,15 +117,29 @@
 
           <div class="profile flexbox">
             <div class="profile-img">
-              <img src="img/no-image.png">
+              <img src="img/panda2.jpg" alt="プロフィール画像">
+              <h3>MyName</h3>
+              <p>K.H</p>
             </div>
 
             <div class="profile-text">
-              <h3>MyName</h3>
-              <p>K.H</p>
 
               <h3>MySkills</h3>
-              <p>HTML/CSS/JavaScript/Ruby</p>
+              <div class="logo-img">
+                <img src="img/html5.png" class="htmllogo">
+                <img src="img/css3.png" class="htmllogo">
+                <img src="img/javascript-logo.png" class="htmllogo">
+                <img src="img/jquery-logo.png" class="htmllogo">
+                <img src="img/ruby.png" class="htmllogo">
+              </div>
+              <p>HTML/CSS/JavaScript/jQuery/Ruby</p>
+
+              <h3>Tool</h3>
+              <div class="logo-img">
+                <img src="img/github-logo.png" class="htmllogo">
+                <img src="img/slack-logo.png" class="htmllogo">
+              </div>
+              <p>GitHub/Slack</p>
 
               <h3>MyHobby</h3>
               <p>Car/Travel/Watching Sports</p>
@@ -148,12 +163,12 @@
           </p>
 
           <ul class="list">
-            <li><img src="img/programming.png" class="gallery-img"></li>
-            <li><img src="img/baseball.png" class="gallery-img"></li>
-            <li><img src="img/soccer.png" class="gallery-img"></li>
-            <li><img src="img/sea.png" class="gallery-img"></li>
-            <li><img src="img/cup-of-coffee.png" class="gallery-img"></li>
-            <li><img src="img/cup-of-coffee.png" class="gallery-img"></li>
+            <li><img src="img/programming.jpg" class="gallery-img" alt="プログラミング画像"></li>
+            <li><img src="img/supra.jpg" class="gallery-img" alt="スープラ画像"></li>
+            <li><img src="img/esquire.jpg" class="gallery-img" alt="エスクァイア画像"></li>
+            <li><img src="img/sea.jpg" class="gallery-img" alt="海画像"></li>
+            <li><img src="img/baseball.jpg" class="gallery-img" alt="野球画像"></li>
+            <li><img src="img/soccer.jpg" class="gallery-img" alt="サッカー画像"></li>
           </ul>
         </div>
       </div>
@@ -173,20 +188,57 @@
           </p>
 
           <div class="contact flexbox">
-            <div class="contacts">
+            <div class="contact-form">
 
-              <h3>Mail</h3>
-              <p>xxx@xxx.com</p>
-              <h3>Tel</h3>
-              <p>000-0000-0000</p>
+              <p class="lead-form">お問合わせ</p>
 
+              <form>
+
+                <div class="item">
+                  <label for="name" class="label">お名前</label>
+                  <input id="name" class="inputs" type="text" name="your-name" placeholder="山田太郎">
+                </div>
+                <div id="msg-name"></div>
+
+                <div class="item">
+                  <label for="tel" class="label">電話番号</label>
+                  <input id="tel" class="inputs" type="tel" name="your-tel" placeholder="01001010101">
+
+                </div>
+                <div id="msg-tel"></div>
+
+                <div class="item">
+                  <label for="email" class="label">メールアドレス</label>
+                  <input id="email" class="inputs" type="email" name="your-email" placeholder="qqqpppcc@gmail.com">
+
+                </div>
+                <div id="msg-email"></div>
+
+                <div class="item">
+                  <label for="text" class="label">お問い合わせ内容</label>
+                  <textarea id="text" class="inputs"></textarea>
+                </div>
+
+                <div class="btn-area">
+                  <input type="submit" value="送信する"><input type="reset" value="リセット">
+                </div>
+
+              </form>
             </div>
 
             <div class="contact-text">
-              <h3>SNS</h3>
-              <a href="https://www.instagram.com/" target="_blank"><i class="fab fa-instagram fa-3x insta-color"></i></a>
-              <a href="https://twitter.com/" target="_blank"><i class="fab fa-twitter fa-3x twitter-color"></i></a>
-              <a href="https://www.facebook.com/" target="_blank"><i class="fab fa-facebook-square fa-3x facebook-color"></i></a>
+              <div class="sns">
+                <h3>Mail</h3>
+                <p><a href="mailto:xxx@xxx.com">xxx@xxx.com</a>
+                  <p>
+                    <h3>Tel</h3>
+                    <p>000-0000-0000</p>
+
+                    <h3>SNS</h3>
+                    <a href="https://www.instagram.com/" target="_blank"><i class="fab fa-instagram fa-3x insta-color"></i></a>
+                    <a href="https://twitter.com/" target="_blank"><i class="fab fa-twitter fa-3x twitter-color"></i></a>
+                    <a href="https://www.facebook.com/" target="_blank"><i class="fab fa-facebook-square fa-3x facebook-color"></i></a>
+              </div>
             </div>
           </div>
         </div>
@@ -197,6 +249,7 @@
     <footer>
       <p>&copy;MySite</p>
     </footer>
+
   </div>
 
 </body>
